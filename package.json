@@ -1,0 +1,40 @@
+{
+  "name": "portfolio",
+  "description": "software developer.",
+  "homepage": "http://marc-takoumba.com",
+  "version": "0.2.0",
+  "license": "MIT",
+  "private": true,
+  "author": {
+    "name": "Marc Takoumba",
+    "email": "mtakoumba@gmail.com",
+    "url": "https://github.com/youorus"
+  },
+  "scripts": {
+    "prebuild": "node scripts/favicons.js",
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "export": "next build && next export",
+    "predeploy": "npm run build && npm run export && touch ./out/.nojekyll",
+    "deploy": "gh-pages -d out",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "bootstrap": "^5.2.1",
+    "next": "12.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.0",
+    "favicons": "^6.2.2",
+    "gh-pages": "^4.0.0",
+    "sass": "^1.54.9"
+  }
+}
