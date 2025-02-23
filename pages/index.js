@@ -27,7 +27,7 @@ export default function Home({ repos }) {
       <Intro
         title={intro.title}
         description={intro.description}
-        image={intro.image}
+        image="/profile.png"
         buttons={intro.buttons}
       />
       <About title={about.title} description={about.description} />

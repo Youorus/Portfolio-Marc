@@ -1,0 +1,57 @@
+/* Custom.css */
+/* https://getbootstrap.com/docs/5.0/customize/sass/ */
+
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap");
+
+/* Définition des variables en dur */
+:root {
+  --primary: #365b6d;
+  --secondary: #f7f7f7;
+  --light: #ffffff;
+  --font-family-sans-serif: -apple-system, "Barlow", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --card-border-radius: 15px;
+}
+
+/* Appliquer le style général */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Icon style */
+.icon-style {
+  font-family: var(--font-family-sans-serif);
+  color: var(--primary);
+}
+
+/* Style des cartes */
+.card-work {
+  transition: box-shadow 0.3s;
+}
+
+.card-work:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+
+.card-image {
+  transition: all 0.3s;
+  border-radius: var(--card-border-radius);
+  box-shadow: 1rem 1rem var(--primary);
+}
+
+.card-image:hover {
+  transform: translate(-0.5rem, -0.5rem);
+  box-shadow: 2rem 2rem var(--primary);
+}
