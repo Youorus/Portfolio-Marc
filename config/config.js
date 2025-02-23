@@ -1,9 +1,4 @@
-import profile from "./profile.png";
-import {
-  faAppStore,
-  faGithub,
-  faGooglePlay,
-} from "@fortawesome/free-brands-svg-icons";
+import profile from "/profile.png";
 import {} from "@fortawesome/free-solid-svg-icons";
 
 export const navigation = {
@@ -93,6 +88,10 @@ export const work = {
       icons: null,
     },
   ],
+};
+
+export const projects = {
+  title: "Projects",
 };
 
 export const contact = {
