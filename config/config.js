@@ -1,4 +1,5 @@
-import profile from "/profile.png";
+import profile from "../public/profile.png"; // Correct
+
 import {} from "@fortawesome/free-solid-svg-icons";
 
 export const navigation = {
