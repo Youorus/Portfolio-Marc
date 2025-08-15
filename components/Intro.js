@@ -1,10 +1,12 @@
 import React from "react";
-import getConfig from "next/config";
 import Link from "next/link";
 
-const { publicRuntimeConfig } = getConfig();
+const base = process.env.NEXT_PUBLIC_BASE_PATH || ""; // ← "/Portfolio-Marc" en prod, "" en dev
 
 export const Intro = ({ title, description, image, buttons }) => {
+  // normalise l'URL (supporte "profile.png" ou "/profile.png")
+  const imgSrc = `${base}${image.startsWith("/") ? image : `/${image}`}`;
+
   return (
     <div className="bg-secondary py-5 px-5">
       <div className="container">
@@ -15,8 +17,8 @@ export const Intro = ({ title, description, image, buttons }) => {
             <div className="text-center">
               {buttons.map((value, index) =>
                 value.isPrimary ? (
-                  <Link key={index} href={value.link}>
-                    <a className="btn btn-primary my-1 mx-3">{value.title}</a>
+                  <Link key={index} href={value.link} className="btn btn-primary my-1 mx-3">
+                    {value.title}
                   </Link>
                 ) : (
                   <a
@@ -37,7 +39,7 @@ export const Intro = ({ title, description, image, buttons }) => {
               className="img-fluid my-3 card-image"
               width="250"
               height="250"
-              src={image}
+              src={imgSrc}              // ← important
               alt="profile of Marc"
             />
           </div>
@@ -47,17 +49,15 @@ export const Intro = ({ title, description, image, buttons }) => {
   );
 };
 
-export const About = ({ title, description }) => {
-  return (
-    <div id="about" className="bg-white py-5 px-5">
-      <div className="container">
-        <h1 className="text-primary fw-bold">{title}</h1>
-        <div className="px-sm-5">
-          {description.map((value, index) => (
-            <p key={index}>{value}</p>
-          ))}
-        </div>
+export const About = ({ title, description }) => (
+  <div id="about" className="bg-white py-5 px-5">
+    <div className="container">
+      <h1 className="text-primary fw-bold">{title}</h1>
+      <div className="px-sm-5">
+        {description.map((value, index) => (
+          <p key={index}>{value}</p>
+        ))}
       </div>
     </div>
-  );
-};
+  </div>
+);

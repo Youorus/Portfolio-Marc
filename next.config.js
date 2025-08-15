@@ -18,7 +18,5 @@ module.exports = {
   reactStrictMode: true,
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,
-  env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
-  },
+  env: { NEXT_PUBLIC_BASE_PATH: isProd ? "/Portfolio-Marc" : "" }
 };
